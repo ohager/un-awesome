@@ -53,3 +53,13 @@ else{
     myObject.setDueDate(null);
 }
 ```
+
+
+###### Because we don't trust in 'Object == null'
+```java
+public boolean logout(String token)
+{
+    LogedUser user = logedUsers.remove(token);
+    return (user != null) ? true : false;
+}
+```
