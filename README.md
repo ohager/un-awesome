@@ -9,6 +9,7 @@ Just send a PR
 ## Programming language indices
 
 * [Javascript](#javascript)
+* [Java](#java)
 
 
 ### Javascript
@@ -37,4 +38,18 @@ const routine = async (callback) => {
 ###### It's so clear
 ```javascript
 const sumBy = (collection, property) => _.sumBy(collection, item => item[property]);
+```
+
+
+
+### Java
+
+###### Really?
+```java
+if(computedDate != null){
+    myObject.setDueDate(computedDate);
+}
+else{
+    myObject.setDueDate(null);
+}
 ```
