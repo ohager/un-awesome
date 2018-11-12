@@ -32,3 +32,9 @@ const routine = async (callback) => {
   return await userApi.get().then(()=> callback)
 }
 ```
+
+
+###### It's so clear
+```javascript
+const sumBy = (collection, property) => _.sumBy(collection, item => item[property]);
+```
