@@ -13,12 +13,22 @@ Just send a PR
 
 ### Javascript
 
+###### The Best null checking ever
 ```javascript
+
 const newReply = (reply !== null) ? reply : null;
 ```
-
+###### Handling errors as I handle problems in my life
 ```javascript
 const errorHandler = () => {
   throw new Error();
 };
+```
+
+
+###### "Yes I understood this async await thing"
+```javascript
+const routine = async (callback) => {
+  return await userApi.get().then(()=> callback)
+}
 ```
