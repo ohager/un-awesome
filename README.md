@@ -80,6 +80,7 @@ if (!returns)
   throw new ValidationException("Error message");
 ```
 
+
 ###### Let's Make more for, not filter
 ```java 
 
@@ -88,3 +89,29 @@ for (invoiceDTO invoice : invoices) {
       if (invoice.status.equals(status))
          listLong.add(invoice.id);
 }
+```
+
+###### Java 8 with some for's and if's (one inside another)
+```java
+if (currentItems != null)
+  for (SomeDTO someDTO : currentItems) {
+    Long currentItem = documentControllable
+        .add(Tags.Document.Items)
+        .attribute(
+            this.processor
+                .getDocumentItemProcessor()
+                .inserting(someDTO)
+        ).access().getId();
+
+    if (someDTO.getLinks() != null)
+      for (AnotherDTO anotherDTO : someDTO.getLinks()) {
+        ItemControllable itemControllable = manager.getItems().id(currentItem);
+        itemControllable
+            .link(anotherDTO.getReferencing())
+            .attribute(
+                this.processor.getDocumentItemProcessor().getDocumentItemLinkProcessor().inserting(anotherDTO)
+            );
+        itemControllable.parent();
+      }
+  }
+```
