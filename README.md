@@ -79,3 +79,12 @@ if (c.getNif() != null)
 if (!returns)
   throw new ValidationException("Error message");
 ```
+
+###### Let's Make more for, not filter
+```java 
+
+for (invoiceDTO invoice : invoices) {
+  if (invoice.status != null)
+      if (invoice.status.equals(status))
+         listLong.add(invoice.id);
+}
