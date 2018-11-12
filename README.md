@@ -63,3 +63,19 @@ public boolean logout(String token)
     return (user != null) ? true : false;
 }
 ```
+
+
+###### More if's more clear
+```java
+boolean returns = false;
+
+if (c.getId() != null)
+  returns = true;
+if (c.getName() != null)
+  returns = true;
+if (c.getNif() != null)
+  returns = true;
+
+if (!returns)
+  throw new ValidationException("Error message");
+```
