@@ -1,7 +1,7 @@
 # un-awesome
 The most shitty codes you ever seen in your entire life. 💩
 
-Did you think that the code that you seen was terrible? Look the codes bellow and be happy with you shitty code.
+Did you though the code that you seen was terrible? Look the codes bellow and be happy with you shitty code.
 
 ## Contributing
 Just send a PR
