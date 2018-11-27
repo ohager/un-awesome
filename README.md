@@ -130,3 +130,24 @@ if (currentItems != null)
       }
   }
 ```
+
+###### JSON's coming!
+```java 
+@Override
+@PostMapping("duties")
+@ResponseStatus(HttpStatus.CREATED)
+// TODO: WTF? JsonNode? Huhuahuahahuad
+public DutyType createDuty(@RequestBody JsonNode newDuty) {
+  DutyType dutyType = new DutyType();
+  String dutyTypeName = newDuty.get("dutyTypeName").textValue();
+
+  // TODO use validator
+  if (dutyTypeName.isEmpty())
+    throw new ValidationException("DutyType name is empty");
+
+  dutyType.setName(dutyTypeName);
+  dutyTypeDAO.save(dutyType);
+
+  return dutyType;
+}
+```
