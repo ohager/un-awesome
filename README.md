@@ -40,6 +40,21 @@ const routine = async (callback) => {
 const sumBy = (collection, property) => _.sumBy(collection, item => item[property]);
 ```
 
+###### I grok'ed the ReactJS key property
+
+or: abusing the [shortid](https://github.com/dylang/shortid) package! 
+
+```jsx
+  {!isEmpty(sapErrors) && (
+    <div>
+      <b>SAP Error:</b> <br/>
+      {sapErrors.listErrors.map(item => (
+        <p key={shortid.generate()}>{item.message}</p>
+      ))}
+    </div>
+  )}
+```
+
 
 
 ### Java
